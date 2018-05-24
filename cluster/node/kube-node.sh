@@ -40,8 +40,8 @@ echo '============================================================'
 if [ $(getenforce) = "Enabled" ]; then
 setenforce 0
 fi
-systemctl disable firewalld
-systemctl stop firewalld
+#systemctl disable firewalld centos7 错误
+#systemctl stop firewalld
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 
 echo "Disable selinux and firewalld success!"
